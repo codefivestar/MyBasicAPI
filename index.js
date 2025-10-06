@@ -1,9 +1,15 @@
 const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
 const app = express();
-const PORT = process.env.PORT || 3000;
+
+//const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
+
 
 // Middleware para parsear JSON
 app.use(express.json());
+app.use(cors());
 
 // Datos de ejemplo
 let usuarios = [
